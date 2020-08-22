@@ -7,6 +7,7 @@ export class Mapper {
 
     public static async getOriginalLink(sharedURL: string): Promise<string> {
         const mappings = JSON.parse(await Persistence.readFromLocalFile(`${Deno.cwd()}/mappings.json`))
+        console.log(sharedURL)
         const originalLink = mappings.filter((e: any) => e.sharedURL === sharedURL)[0].originalURL
 
         return originalLink
@@ -20,7 +21,7 @@ export class Mapper {
         const existingEntry = mappings.filter((e:any) => e.sharedURL === `${baseURL}/${newLinkId}`)[0]
         if (existingEntry === undefined) {
             const newEntry = {
-                sharedURL: `${baseURL}/${newLinkId}`,
+                sharedURL: `${baseURL}/?group=${newLinkId}`,
                 originalURL
             }
             mappings.push(newEntry)
