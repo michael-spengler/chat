@@ -6,8 +6,9 @@ Deno module for chat related challenges and solutions
 ## Usage Example including pm2 start
 
 ```sh
-  
-deno run --allow-read --allow-net https://deno.land/x/http_to_https/chat-server.ts
+
+# copy .env-example.ts to .env.ts and update it with your ingredients  
+deno run --allow-read --allow-net https://deno.land/x/chat/chat-server.ts
 
 ```
 
