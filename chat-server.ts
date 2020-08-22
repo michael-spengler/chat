@@ -7,6 +7,7 @@ export class ChatServer {
     public static serve() {
 
         const app = opine();
+
         const authorizationMiddleware = function (req: any, res: any, next: any) {
             if (req.query.apiKey === apiKey){
                 next();
@@ -29,7 +30,7 @@ export class ChatServer {
 
         app.get('/newMapping', authorizationMiddleware, async (req: any, res: any) => {
             let newLinkToBeShared = await Mapper.addNewMapping(`https://${req.query.originalurl}`)
-            res.send(newLinkToBeShared)
+            res.send({newLinkToBeShared})
         });
 
         if (port.toString().includes('443')) {
@@ -46,6 +47,3 @@ export class ChatServer {
 }
 
 ChatServer.serve()
-
-
-

@@ -1,6 +1,7 @@
 # Chat
 
-Deno Module to Chat.
+Deno module for chat related challenges and solutions
+
 
 ## Usage Example including pm2 start
 
@@ -16,6 +17,7 @@ or via pm2
 
 git clone https://github.com/michael-spengler/chat.git
 cd chat
+echo [] > mappings.json  # only during your initial setup
 pm2 start  --interpreter="deno" --interpreter-args="run --allow-net --allow-read --allow-write" chat-server.ts
 
 ```
