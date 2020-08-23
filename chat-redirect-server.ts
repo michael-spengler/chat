@@ -18,7 +18,7 @@ export class ChatRedirectServer {
 
 
         app.get('/', async (req: any, res: any) => {
-            const sharedURL = req.protocol + '://' + req.get('host') + req.originalUrl;
+            const sharedURL = 'https://' + req.get('host') + req.originalUrl;
             try {
                 const originalURL = await Mapper.getOriginalLink(sharedURL)
                 const html = `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url='${originalURL}'" /></head><body><p>Redirecting to https: <a href="${originalURL}">${originalURL}</a></p></body></html>`
