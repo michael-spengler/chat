@@ -24,7 +24,7 @@ export class ChatRedirectServer {
                 const html = `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url='${originalURL}'" /></head><body><p>Redirecting to https: <a href="${originalURL}">${originalURL}</a></p></body></html>`
                 res.send(html);
             } catch (error) {
-                res.send(`I could not find the original link. ${error.message}`);
+                res.send(`I could not find the original link for ${sharedURL}. ${error.message}`);
             }
         });
 
