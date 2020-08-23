@@ -8,7 +8,7 @@ Deno module for chat related challenges and solutions
 ```sh
 
 # copy .env-example.ts to .env.ts and update it with your ingredients  
-deno run --allow-read --allow-net https://deno.land/x/chat/chat-server.ts
+deno run --allow-read --allow-net https://deno.land/x/chat/chat-redirect-server.ts
 
 ```
 
@@ -19,7 +19,8 @@ or via pm2
 git clone https://github.com/michael-spengler/chat.git
 cd chat
 echo [] > mappings.json  # only during your initial setup
-pm2 start  --interpreter="deno" --interpreter-args="run --allow-net --allow-read --allow-write" chat-server.ts
+cp .env-example.ts .env.ts # only during your initial setup - add your individual ingredients
+pm2 start  --interpreter="deno" --interpreter-args="run --allow-net --allow-read --allow-write" chat-redirect-server.ts
 
 ```
 

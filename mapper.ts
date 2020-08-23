@@ -1,6 +1,6 @@
 
 import { Persistence } from "https://deno.land/x/persistence/persistence.ts"
-import { baseURL } from './.env.ts';
+import { baseURLChatRedirectServer } from './.env.ts';
 import { v4 } from "https://deno.land/std/uuid/mod.ts";
 
 export class Mapper {
@@ -18,10 +18,10 @@ export class Mapper {
 
         let newLinkId = v4.generate().substr(0, 4);
 
-        const existingEntry = mappings.filter((e:any) => e.sharedURL === `${baseURL}/${newLinkId}`)[0]
+        const existingEntry = mappings.filter((e:any) => e.sharedURL === `${baseURLChatRedirectServer}/${newLinkId}`)[0]
         if (existingEntry === undefined) {
             const newEntry = {
-                sharedURL: `${baseURL}/?group=${newLinkId}`,
+                sharedURL: `${baseURLChatRedirectServer}/?group=${newLinkId}`,
                 originalURL
             }
             mappings.push(newEntry)

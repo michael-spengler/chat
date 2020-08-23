@@ -1,8 +1,8 @@
 import { opine } from "https://deno.land/x/opine@0.20.2/mod.ts";
 import { Mapper } from "./mapper.ts"
-import { port, pathToCert, pathToCertKey, apiKey } from './.env.ts'
+import { portChatRedirectServer, pathToCert, pathToCertKey, apiKey } from './.env.ts'
 
-export class ChatServer {
+export class ChatRedirectServer {
 
     public static serve() {
 
@@ -33,17 +33,17 @@ export class ChatServer {
             res.send({newLinkToBeShared})
         });
 
-        if (port.toString().includes('443')) {
+        if (portChatRedirectServer.toString().includes('443')) {
             const httpsOptions = {
-                port,
+                port: portChatRedirectServer,
                 certFile: pathToCert,
                 keyFile: pathToCertKey,
             }
             app.listen(httpsOptions)
         } else {
-            app.listen(port)
+            app.listen(portChatRedirectServer)
         }
     }
 }
 
-ChatServer.serve()
+ChatRedirectServer.serve()
