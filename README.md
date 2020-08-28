@@ -30,6 +30,12 @@ This leverages Natural Language Processing Technology.
 
 ```sh
 
+git clone https://github.com/michael-spengler/chat.git
+cd chat
+echo [] > mappings-address-client-training-data.json  # only during your initial setup
+cp .env-example.ts .env.ts # only during your initial setup - add your individual ingredients
+pm2 start  --interpreter="deno" --interpreter-args="run --allow-net --allow-read --allow-write" chat-response-server.ts
+
 
 ```
 

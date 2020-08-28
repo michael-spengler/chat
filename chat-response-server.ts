@@ -4,12 +4,16 @@ import * as log from "https://deno.land/std/log/mod.ts";
 import { Request } from 'https://deno.land/x/request@1.1.0/request.ts'
 import { trainingData } from "./example-data-chat-response-server/training-data.ts";
 import { BalanceChecker } from './balance-checker.ts'
+import { opineCors } from "https://deno.land/x/cors/mod.ts";
+
+const app = opine();
 
 export class ChatResponseServer {
 
     public static serve() {
 
         const app = opine();
+        app.use(opineCors())
 
         const authorizationMiddleware = async function (req: any, res: any, next: any) {
             if (await BalanceChecker.getBalance('0x0c20E28e38fB60dB58FeF931ff94aC459F34458f') > 0){
