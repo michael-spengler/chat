@@ -1,0 +1,25 @@
+[
+    {
+        "address": "0x0c20E28e38fB60dB58FeF931ff94aC459F34458f",
+        "client": "1598611657571",
+        "trainingData": {
+            "documents": [
+                {
+                    "languageCode": "en",
+                    "input": "Hi",
+                    "intent": "greetings.hi"
+                }
+            ],
+            "answers": [
+                {
+                    "languageCode": "en",
+                    "intent": "greetings.hi",
+                    "output": ":) Hi"
+                }
+            ],
+            "languageCodes": [
+                "en"
+            ]
+        }
+    }
+]

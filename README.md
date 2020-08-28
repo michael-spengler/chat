@@ -3,7 +3,8 @@
 Deno module for chat related challenges and solutions
 
 
-## Usage Example including pm2 start
+## Usage Example For Chat Redirect Server
+This protects invitation links from being harvested by scammers.
 
 ```sh
 
@@ -23,6 +24,22 @@ cp .env-example.ts .env.ts # only during your initial setup - add your individua
 pm2 start  --interpreter="deno" --interpreter-args="run --allow-net --allow-read --allow-write" chat-redirect-server.ts
 
 ```
+
+## Usage Example For Chat Response Server
+This leverages Natural Language Processing Technology.
+
+```sh
+
+
+```
+
+or via pm2 
+
+```sh
+
+
+```
+
 
 
 ## Support my Open Source Contributions  
