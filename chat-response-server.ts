@@ -6,8 +6,6 @@ import { trainingData } from "./example-data-chat-response-server/training-data.
 import { BalanceChecker } from './balance-checker.ts'
 import { opineCors } from "https://deno.land/x/cors/mod.ts";
 
-const app = opine();
-
 export class ChatResponseServer {
 
     public static serve() {
